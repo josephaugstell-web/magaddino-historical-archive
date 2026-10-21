@@ -1,0 +1,24 @@
+{
+  "site_title": "Magaddino Historical Records Archive",
+  "byline": "Joseph Augstell (Joe Augstell)",
+  "introduction": "An independently organized collection of historical government documents concerning Stefano Magaddino and organized crime in Western New York. Original FBI documents are authored by the Federal Bureau of Investigation. Research collection and online publication credited to Joseph Augstell. OCR transcripts are machine-generated and may contain transcription errors; verify quotations against the original scans.",
+  "collections": [
+    {
+      "id": "magaddino-fbi",
+      "title": "Stefano Magaddino — FBI Investigative Files",
+      "description": "Ten sections of historical FBI investigative records, with source scans preserved at the Internet Archive.",
+      "items": [
+        {"id":"section-1","title":"Section 1","archive_id":"magaddino-file-1","expected_pages":277},
+        {"id":"section-2","title":"Section 2","archive_id":"ocr-magaddino-section-2-2","expected_pages":395},
+        {"id":"section-3","title":"Section 3","archive_id":"1464742-0-file-1-section-3","expected_pages":695},
+        {"id":"section-4","title":"Section 4","archive_id":"1464742-0-file-1-section-4","expected_pages":227},
+        {"id":"section-5","title":"Section 5","archive_id":"1464742-0-file-1-section-5","expected_pages":400},
+        {"id":"section-6","title":"Section 6","archive_id":"1464742-0-file-1-section-6","expected_pages":615},
+        {"id":"section-7","title":"Section 7","archive_id":"1464742-0-file-1-section-7","expected_pages":516},
+        {"id":"section-8","title":"Section 8","archive_id":"1464742-0-file-1-section-8","expected_pages":674},
+        {"id":"section-9","title":"Section 9","archive_id":"1464742-0-file-1-section-9","expected_pages":566},
+        {"id":"section-10","title":"Section 10","archive_id":"1464742-0-file-1-section-10","expected_pages":281}
+      ]
+    }
+  ]
+}
