@@ -224,7 +224,7 @@ h2{
 
 iframe{
  width:100%;
- height:1000px;
+ height:950px;
  border:0;
  background:white;
 }
