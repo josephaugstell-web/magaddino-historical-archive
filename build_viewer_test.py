@@ -45,7 +45,7 @@ def download_xml():
 def extract_pages():
     pages = []
     for event, element in ET.iterparse(str(CACHE), events=("end",)):
-        if element.tag.upper() != "PAGE":
+if element.tag.upper() != "OBJECT":
             continue
 
         words = []
@@ -55,7 +55,7 @@ def extract_pages():
 
         pages.append({
             "number": len(pages) + 1,
-            "source": element.attrib.get("value", ""),
+         "source": next((p.get("value", "") for p in element.findall("PARAM") if p.get("name") == "PAGE"), ""),
             "ocr": " ".join(words)
         })
         element.clear()
