@@ -1,0 +1,32 @@
+
+name: Test FBI Section 1 Viewer
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-viewer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Get repository files
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build Section 1 viewer
+        run: python build_viewer_test.py
+
+      - name: Upload viewer files
+        uses: actions/upload-artifact@v4
+        with:
+          name: magaddino-section1-viewer-test
+          path: viewer-test-output/
+          if-no-files-found: error
