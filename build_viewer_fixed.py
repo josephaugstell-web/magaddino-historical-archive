@@ -71,7 +71,10 @@ iframe {
 iframe, .viewer iframe {
     touch-action: none !important;
 }
-
+/* Internet Archive toolbar cleanup - test only */
+iframe {
+    clip-path: inset(0 0 45px 0);
+}
 """
 
     if css_files:
