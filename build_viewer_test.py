@@ -42,10 +42,11 @@ def download_xml():
     print("Download complete.")
 
 
+
 def extract_pages():
     pages = []
     for event, element in ET.iterparse(str(CACHE), events=("end",)):
-if element.tag.upper() != "OBJECT":
+        if element.tag.upper() != "OBJECT":
             continue
 
         words = []
@@ -55,12 +56,20 @@ if element.tag.upper() != "OBJECT":
 
         pages.append({
             "number": len(pages) + 1,
-         "source": next((p.get("value", "") for p in element.findall("PARAM") if p.get("name") == "PAGE"), ""),
+            "source": next(
+                (
+                    p.get("value", "")
+                    for p in element.findall("PARAM")
+                    if p.get("name", "").upper() == "PAGE"
+                ),
+                ""
+            ),
             "ocr": " ".join(words)
         })
         element.clear()
 
     return pages
+
 
 
 CSS = """
