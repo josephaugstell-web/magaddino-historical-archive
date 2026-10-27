@@ -388,7 +388,18 @@ FBI documents retain their original authorship.
 def main():
     download_xml()
     pages = extract_pages()
+    # Load manually corrected OCR transcripts
+    corrections_file = ROOT / "ocr_corrections.json"
 
+    if corrections_file.exists():
+        corrections = json.loads(
+            corrections_file.read_text(encoding="utf-8")
+        )
+
+        for page in pages:
+            page_number = str(page["number"])
+            if page_number in corrections:
+                page["ocr"] = corrections[page_number]
     print(
         f"Extracted {len(pages)} OCR pages; "
         f"expected {EXPECTED_PAGES} scanned pages"
