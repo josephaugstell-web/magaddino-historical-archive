@@ -1,0 +1,28 @@
+
+name: Build Fixed Section 1 Viewer
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build synchronized viewer
+        run: python build_viewer_fixed.py
+
+      - name: Upload 277-page viewer
+        uses: actions/upload-artifact@v4
+        with:
+          name: magaddino-fixed-viewer
+          path: viewer-fixed-output/
+          if-no-files-found: error
