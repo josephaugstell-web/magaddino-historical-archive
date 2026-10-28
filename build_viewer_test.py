@@ -269,8 +269,10 @@ iframe{
 
 @media(max-width:800px){
  .viewer{grid-template-columns:1fr}
- iframe{height:65vh}
+ iframe{height:900px}
  .ocr{min-height:200px}
+  main{padding:10px}
+ .panel{padding:10px}
 }
 """
 
