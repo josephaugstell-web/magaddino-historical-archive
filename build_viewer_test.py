@@ -294,7 +294,7 @@ def render_page(page, total):
         else "<span>Last page</span>"
     )
 
-            scan_url = (
+    scan_url = (
         f"https://archive.org/services/img/{ARCHIVE_ID}"
         f"/page/n{n-1}"
     )
