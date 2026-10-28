@@ -348,7 +348,7 @@ Internet Archive source</a>
 <iframe
  src="{escape(scan_url)}"
  title="Original FBI scan page {n}"
- loading="lazy">
+ loading="lazy" scrolling="no" style="pointer-events:none;touch-action:none;">
 </iframe>
 
 <p class="notice">
