@@ -294,9 +294,9 @@ def render_page(page, total):
         else "<span>Last page</span>"
     )
 
-    scan_url = (
-        f"https://archive.org/embed/{ARCHIVE_ID}"
-        f"/page/n{n-1}/mode/1up"
+            scan_url = (
+        f"https://archive.org/services/img/{ARCHIVE_ID}"
+        f"/page/n{n-1}"
     )
 
     original_url = (
@@ -345,11 +345,11 @@ Internet Archive source</a>
 <section class="panel">
 <h3>Original FBI scan</h3>
 
-<iframe
+<img
  src="{escape(scan_url)}"
- title="Original FBI scan page {n}"
- loading="lazy" scrolling="no" style="pointer-events:none;touch-action:none;">
-</iframe>
+ alt="Original FBI scan page {n}"
+ loading="lazy"
+ style="display:block;width:100%;height:900px;object-fit:contain;background:white;">
 
 <p class="notice">
 <a href="{escape(original_url)}"
