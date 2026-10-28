@@ -388,6 +388,17 @@ FBI documents retain their original authorship.
 def main():
     download_xml()
     pages = extract_pages()
+    # Load recovered OCR drafts for Section 1
+    recovered_file = ROOT / "Magaddino_Section1_Recovered_OCR_Pages_3-277.json"
+
+    if recovered_file.exists():
+        recovered = json.loads(recovered_file.read_text(encoding="utf-8"))
+
+        for page in pages:
+            page_number = str(page["number"])
+            if page_number in recovered:
+                page["ocr"] = recovered[page_number]
+
     # Load manually corrected OCR transcripts
     corrections_file = ROOT / "ocr_corrections.json"
 
